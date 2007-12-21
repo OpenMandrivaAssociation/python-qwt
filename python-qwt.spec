@@ -13,6 +13,7 @@ License:      GPL
 Group:        Development/Python
 Summary:      Python bindings for Qwt (Qt Widgets for Technical applications)
 Source0:      http://belnet.dl.sourceforge.net/sourceforge/pyqwt/%{module}-%{version}.tar.bz2
+BuildRoot:    %{_tmppath}/%{name}-%{version}-build
 Provides:     PyQwt = %{version}-%{release}
 Requires:     python
 Requires:     PyQt
