@@ -29,7 +29,6 @@ BuildRequires: python-qt
 BuildRequires: python-sip
 
 %description
-
 Qwt is an extension to the Qt GUI library. The Qwt library contains
 widgets and components which are primarily useful for technical and
 scientifical purposes. It includes a 2-D plotting widget, different
