@@ -51,6 +51,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
+%doc README ANN* qt4examples Doc/html
 %{py_platsitedir}/*
 %_datadir/sip/PyQt4/Qwt5/*
-%doc ANN* AUTHORS COPYING* DIFFER INSTALL MANIFEST* PATCHER README* REGIS* THANKS qt4examples Doc/html
