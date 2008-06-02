@@ -1,7 +1,7 @@
 
 %define module PyQwt
-%define version 4.2
-%define release 2
+%define version 5.1.0
+%define release 1
 
 %define sipfiles /usr/share/sip
 
@@ -9,10 +9,10 @@ Name:         python-qwt
 Version:      %{version}
 Release:      %mkrel %release
 Url:	      http://pyqwt.sourceforge.net/
-License:      GPL
+License:      GPLv2+
 Group:        Development/Python
 Summary:      Python bindings for Qwt (Qt Widgets for Technical applications)
-Source0:      http://belnet.dl.sourceforge.net/sourceforge/pyqwt/%{module}-%{version}.tar.bz2
+Source0:      http://belnet.dl.sourceforge.net/sourceforge/pyqwt/%{module}-%{version}.tar.gz
 BuildRoot:    %{_tmppath}/%{name}-%{version}-build
 Provides:     PyQwt = %{version}-%{release}
 Requires:     python
@@ -20,12 +20,11 @@ Requires:     PyQt
 Requires:     sip
 Requires:     python-numeric
 Requires:     python-numarray
-
 BuildRequires: python-devel
 BuildRequires: libqwt-devel
 BuildRequires: python-numeric-devel
 BuildRequires: python-numarray-devel
-BuildRequires: python-qt
+BuildRequires: python-qt4
 BuildRequires: python-sip
 
 %description
@@ -42,7 +41,7 @@ PyQwt has almost all functionality of the Qwt library implemented.
 
 %build
 cd configure
-python configure.py -i /usr/lib/qt3/include/qwt -l /usr/lib/qt3/%{_lib}
+python configure.py -I %{qt4include}/qwt
 %make
 
 %install
