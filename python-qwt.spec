@@ -1,6 +1,6 @@
 %define module PyQwt
 %define version 5.1.0
-%define release 1
+%define release 2
 
 Name:         python-qwt
 Version:      %{version}
@@ -16,10 +16,12 @@ Requires:     python-qt4
 Requires:     python-sip
 Requires:     python-numeric
 Requires:     python-numarray
+Requires:     python-numpy
 %py_requires -d
 BuildRequires: libqwt-devel
 BuildRequires: python-numeric-devel
 BuildRequires: python-numarray-devel
+BuildRequires: python-numpy-devel
 BuildRequires: python-qt4
 BuildRequires: python-sip
 
@@ -36,7 +38,7 @@ PyQwt has almost all functionality of the Qwt library implemented.
 
 %build
 cd configure
-python configure.py -I %{qt4include}/qwt
+python configure.py %_smp_mflags --extra-cflags="%{optflags}" --extra-cxxflags="%{optflags}"
 %make
 
 %install
