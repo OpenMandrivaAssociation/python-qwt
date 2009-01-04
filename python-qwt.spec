@@ -1,10 +1,10 @@
 %define module PyQwt
 %define version 5.1.0
-%define release 2
+%define rel 3
 
 Name:         python-qwt
 Version:      %{version}
-Release:      %mkrel %release
+Release:      %mkrel %rel
 Url:	      http://pyqwt.sourceforge.net/
 License:      GPLv2+
 Group:        Development/Python
@@ -38,15 +38,14 @@ PyQwt has almost all functionality of the Qwt library implemented.
 
 %build
 cd configure
-python configure.py %_smp_mflags --extra-cflags="%{optflags}" --extra-cxxflags="%{optflags}"
+python configure.py %_smp_mflags --extra-cflags="%{optflags}" --extra-cxxflags="%{optflags}" \
+	--extra-lflags="%{?ldflags}" --extra-libs="python%{py_ver}"
 %make
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-cd configure
-%makeinstall_std
-cd -
+%makeinstall_std -C configure
 
 %clean
 rm -rf $RPM_BUILD_ROOT
