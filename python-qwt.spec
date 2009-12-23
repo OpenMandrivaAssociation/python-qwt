@@ -1,6 +1,6 @@
 %define module PyQwt
-%define version 5.1.0
-%define rel 4
+%define version 5.2.0
+%define rel 1
 
 Name:         python-qwt
 Version:      %{version}
@@ -18,7 +18,7 @@ Requires:     python-numeric
 Requires:     python-numarray
 Requires:     python-numpy
 %py_requires -d
-BuildRequires: libqwt-devel
+BuildRequires: libqwt-devel >= 5.2.0
 BuildRequires: python-numeric-devel
 BuildRequires: python-numarray-devel
 BuildRequires: python-numpy-devel
@@ -52,6 +52,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
-%doc README ANN* qt4examples Doc/html
+%doc README ANN* qt4examples
 %{py_platsitedir}/*
 %_datadir/sip/PyQt4/Qwt5/*
