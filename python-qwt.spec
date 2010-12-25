@@ -1,6 +1,6 @@
 %define module PyQwt
 %define version 5.2.0
-%define rel 5
+%define rel 6
 
 Name:         python-qwt
 Version:      %{version}
