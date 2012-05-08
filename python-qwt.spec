@@ -1,6 +1,6 @@
 %define module PyQwt
 %define version 5.2.0
-%define rel 6
+%define rel 7
 
 Name:         python-qwt
 Version:      %{version}
@@ -10,7 +10,6 @@ License:      GPLv2+
 Group:        Development/Python
 Summary:      Python bindings for Qwt (Qt Widgets for Technical applications)
 Source0:      http://belnet.dl.sourceforge.net/sourceforge/pyqwt/%{module}-%{version}.tar.gz
-BuildRoot:    %{_tmppath}/%{name}-%{version}-build
 Provides:     PyQwt = %{version}-%{release}
 Requires:     python-qt4
 Requires:     python-sip
@@ -43,15 +42,9 @@ python configure.py %_smp_mflags --extra-cflags="%{optflags}" --extra-cxxflags="
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
-
 %makeinstall_std -C configure
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
 %files
-%defattr(-,root,root)
 %doc README ANN* qt4examples
 %{py_platsitedir}/*
 %_datadir/sip/PyQt4/Qwt5/*
