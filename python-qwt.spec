@@ -5,7 +5,7 @@
 Name:         python-qwt
 Version:      %{version}
 Release:      %mkrel %rel
-Url:	      http://pyqwt.sourceforge.net/
+Url:	      https://pyqwt.sourceforge.net/
 License:      GPLv2+
 Group:        Development/Python
 Summary:      Python bindings for Qwt (Qt Widgets for Technical applications)
