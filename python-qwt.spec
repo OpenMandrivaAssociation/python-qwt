@@ -18,6 +18,7 @@ Requires:     python-numeric
 Requires:     python-numarray
 Requires:     python-numpy
 %py_requires -d
+BuildRequires:	make
 BuildRequires: libqwt-devel >= 5.2.0
 BuildRequires: python-numeric-devel
 BuildRequires: python-numarray-devel
