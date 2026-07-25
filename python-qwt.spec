@@ -4,7 +4,7 @@
 
 Name:         python-qwt
 Version:      %{version}
-Release:      %mkrel %rel
+Release:      %rel.1
 Url:	      https://pyqwt.sourceforge.net/
 License:      GPLv2+
 Group:        Development/Python
